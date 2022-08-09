@@ -5,6 +5,7 @@ import Provider from 'components/Provider';
 
 import { rootState } from 'store';
 import { getPublicEvents } from 'store/modules/event/slice';
+import Typography from 'components/Typography';
 import EventItem from '../EventItem';
 
 import * as S from './styles';
@@ -21,11 +22,20 @@ const EventList: React.FunctionComponent = () => {
   return (
     <Provider>
       <S.Wrapper>
-        {publicEvents.map((event: any) => (
+        {publicEvents.length ? publicEvents.map((event: any) => (
           <div key={event.id}>
-            <EventItem date={event.date} description={event.description} name={event.name} />
+            <EventItem
+              id={event.id}
+              date={event.date}
+              description={event.description}
+              name={event.name}
+            />
           </div>
-        ))}
+        )) : (
+          <Typography>
+            Nenhum evento criado, seja o primeiro!
+          </Typography>
+        )}
       </S.Wrapper>
     </Provider>
   );

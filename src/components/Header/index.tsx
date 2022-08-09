@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Provider from 'components/Provider';
 import Button from 'components/Button';
+
 import ProfileIcon from './components/ProfileIcon';
 import * as S from './styles';
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import Input from 'components/Input';
 import Button from 'components/Button';
@@ -12,16 +13,21 @@ import * as S from './styles';
 
 const Login: React.FunctionComponent = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isLoading } = useSelector((s: rootState) => s.common);
+
   const [fields, setFields] = useState({
     email: '',
     password: '',
   });
 
-  const { loggedUser } = useSelector((s: rootState) => s.user);
-
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(login(fields));
+    dispatch(login({
+      ...fields,
+      callback: () => navigate('/events'),
+    }));
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,8 +39,6 @@ const Login: React.FunctionComponent = () => {
     });
   };
 
-  console.log('LOGGED', loggedUser);
-
   return (
     <S.Container>
       <Typography variant="h3-normal">Login</Typography>
@@ -43,7 +47,7 @@ const Login: React.FunctionComponent = () => {
         <Input onChange={onChange} name="email" type="email" placeholder="E-mail" />
         <Input onChange={onChange} name="password" type="password" placeholder="Senha" />
 
-        <Button>Entrar</Button>
+        <Button loading={isLoading}>Entrar</Button>
       </S.Form>
     </S.Container>
   );

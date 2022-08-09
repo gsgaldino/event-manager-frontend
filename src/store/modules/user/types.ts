@@ -9,6 +9,7 @@ export interface Login {
   payload: {
     email: string;
     password: string;
+    callback: Function,
   };
 }
 
@@ -19,5 +20,6 @@ export interface LoginSuccess {
     password: string;
     created_at: string;
     dashboardToken: string;
+    acronym: string;
   }
 }

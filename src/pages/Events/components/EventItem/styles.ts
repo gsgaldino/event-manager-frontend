@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  border-radius: var(--radius-medium);
-  border: 1px solid var(--gray-light);
-  display: flex;
-  justify-content: flex-start;
-  max-width: 88%;
-  margin: 0 auto;
-`;
-
 export const Date = styled.div`
   background: var(--primary);
   border-radius: var(--radius-medium) 0 0 var(--radius-medium);
@@ -18,6 +9,7 @@ export const Date = styled.div`
   width: 200px;
   display: grid;
   place-items: center;
+  transition: background 0.2s ease-in-out;
 
   & h1 {
     text-transform: uppercase;
@@ -26,6 +18,25 @@ export const Date = styled.div`
     color: var(--absolute-white);
     width: 100%;
     text-align: center;
+  }
+`;
+
+export const Container = styled.div`
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--gray-light);
+  display: flex;
+  justify-content: flex-start;
+  max-width: 88%;
+  margin: 0 auto;
+  transition: border-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--gray-dark);
+
+    ${Date} {
+      background: var(--primary-dark);
+    }
   }
 `;
 
@@ -38,5 +49,14 @@ export const Description = styled.div`
 
   & h1 {
     font-size: 28px;
+  }
+
+  & p {
+    position: relative;
+    max-width: 800px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
   }
 `;

@@ -30,5 +30,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'import/prefer-default-export': 'off',
     'no-param-reassign': 'off',
+    'react/no-children-prop': 'off',
   },
 };

@@ -11,6 +11,8 @@ enum Variants {
   'h2-strong' = 'h2',
   'h3-normal' = 'h3',
   'h3-strong' = 'h3',
+  'h4-normal' = 'h4',
+  'h4-strong' = 'h4',
   'p' = 'p',
 }
 

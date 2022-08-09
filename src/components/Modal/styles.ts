@@ -24,6 +24,7 @@ export const Background = styled.div<{ isOpen: boolean }>`
 export const Modal = styled.div`
   background: var(--absolute-white);
   max-width: 560px;
+  margin-top: -100px;
   width: 420px;
   height: auto;
   border-radius: var(--radius-small);
@@ -56,7 +57,7 @@ export const ModalHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacement-large);
+  padding: var(--spacement-default) var(--spacement-large);
   position: relative;
 
   &:after {
@@ -74,5 +75,4 @@ export const ModalHeader = styled.div`
 
 export const ModalContent = styled.div`
   padding: var(--spacement-large);
-  padding-bottom: calc(var(--spacement-x-large) * 2);
 `;

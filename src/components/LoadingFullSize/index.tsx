@@ -5,7 +5,7 @@ import * as S from './styles';
 
 const LoadingFullSize: React.FunctionComponent = () => (
   <S.Background>
-    <Spinner />
+    <Spinner color="primary" />
   </S.Background>
 );
 

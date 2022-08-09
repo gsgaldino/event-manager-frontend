@@ -18,10 +18,19 @@ export const CustomInput = styled.input`
   &::placeholder {
     color: var(--gray-dark);
   }
+
+  &[type=datetime-local] {
+    color: var(--gray-dark);
+    font-family: 'Roboto', 'Arial', sans-serif;
+  }
 `;
 
 export const Container = styled.div`
   position: relative;
+  gap: var(--spacement-small);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;
 
 export const EndIcon = styled.div`
@@ -29,4 +38,11 @@ export const EndIcon = styled.div`
   right: var(--spacement-default);
   top: var(--spacement-default);
   cursor: pointer;
+`;
+
+export const Label = styled.label`
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  font-family: 'Roboto', 'Arial', sans-serif;
 `;

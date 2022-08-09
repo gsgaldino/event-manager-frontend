@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import IconButton from 'components/IconButton';
 
-import Icon from 'assets/icons/Profile';
+import Profile from 'assets/icons/Profile';
 
 import { rootState } from 'store';
+import UserIcon from '../UserIcon';
 
 export interface IProfileIconProps { }
 
@@ -19,12 +21,12 @@ const ProfileIcon: React.FunctionComponent<IProfileIconProps> = () => {
   return (
     <div>
       {isLogged ? (
-        <div>
-          <IconButton icon={<Icon />} />
-        </div>
+        <Link to="/profile">
+          <IconButton icon={<UserIcon />} />
+        </Link>
       ) : (
         <div>
-          <IconButton disabled icon={<Icon />} />
+          <IconButton disabled icon={<Profile />} />
         </div>
       )}
     </div>

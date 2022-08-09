@@ -17,6 +17,12 @@ const H1Black = css`
   }
 `;
 
+const H3Normal = css`
+  &.h3-normal {
+    font-weight: 500;
+  }
+`;
+
 export const Container = styled.div.attrs((props: ITypographyProps) => ({
   as: props.as,
 }))`
@@ -25,4 +31,5 @@ export const Container = styled.div.attrs((props: ITypographyProps) => ({
 
   ${H1Strong};
   ${H1Black};
+  ${H3Normal};
 `;

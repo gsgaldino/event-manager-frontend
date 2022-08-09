@@ -4,9 +4,14 @@ import * as types from './types';
 const INITIAL_STATE = {
   loggedUser: {
     dashboardToken: '',
+    acronym: '',
+    id: '',
+    email: '',
+    created_at: '',
   },
   modals: {
     createEvent: false,
+    logout: false,
   },
 };
 
@@ -31,6 +36,9 @@ const userSlice = createSlice({
       draft.loggedUser = payload;
     },
     getByEmail: () => {},
+    logout: (draft) => {
+      draft.loggedUser = INITIAL_STATE.loggedUser;
+    },
   },
 });
 
@@ -42,4 +50,5 @@ export const {
   openModal,
   closeModal,
   registerSuccess,
+  logout,
 } = userSlice.actions;

@@ -11,6 +11,9 @@ export const GlobalStyles = createGlobalStyle`
     --primary: #7678ED;
     --primary-dark: #3D40E5;
     --absolute-white: #F8F7F9;
+    --red: #8D0801;
+    --red-light: #d90c01;
+    --red-dark: #480400;
 
     /* Spacements */
     --spacement-smaller: 2px;
@@ -31,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   button {
     border: none;
   }
@@ -42,6 +49,23 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: var(--absolute-white);
+  }
+
+  /* Scrollbar styles */
+
+  ::-webkit-scrollbar {
+    width: 7px!important;
+    height: 6px!important;
+    background-color: var(--gray-light);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-dark);
+  }
+  ::-webkit-scrollbar-track{
+    background-color: transform;
   }
 
 `;

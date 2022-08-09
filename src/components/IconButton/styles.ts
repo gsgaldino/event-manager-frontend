@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { IIconButtonProps } from '.';
 
 const ButtonSolidCss = css`
   &.solid {
@@ -29,13 +30,32 @@ const ButtonGhostCss = css`
   } 
 `;
 
+const ButtonOutlineCss = css`
+  &.outline {
+    transition: background 0.2s ease-in-out, filter 0.3s ease-in-out;
+    background: transparent;
+    border: 1px solid var(--gray-dark);
+
+    &:hover {
+      background: var(--gray-light);
+    }
+
+    &:active {
+      filter: brightness(0.8);
+    }
+  } 
+`;
+
 const SmallButtonCss = css`
   &.small {
     padding: var(--spacement-small);
+    height: 32px;
+    width: 32px;
+    display: flex;
   }
 `;
 
-export const Container = styled.button<{ squared: boolean }>`
+export const Container = styled.button<IIconButtonProps>`
   border-radius: ${(props) => (props.squared ? 'var(--radius-small)' : '50%')};
   padding: calc(var(--spacement-small) * 2);
   display: grid;
@@ -46,6 +66,7 @@ export const Container = styled.button<{ squared: boolean }>`
 
   ${ButtonSolidCss};
   ${ButtonGhostCss};
+  ${ButtonOutlineCss};
 
   &:disabled {
     background-color: var(--gray-light);
