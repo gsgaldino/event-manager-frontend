@@ -1,14 +1,30 @@
 import React from 'react';
-import Typography from 'components/Typography';
 
+import Provider from 'components/Provider';
+import Typography from 'components/Typography';
+import IconButton from 'components/IconButton';
+
+import GithubIcon from 'assets/icons/GithubIcon';
 import * as S from './styles';
 
 const Footer = () => (
-  <S.Footer>
-    <Typography>
-      Copyright 2022 gsgaldino
-    </Typography>
-  </S.Footer>
+  <Provider>
+    <S.Footer>
+      <Typography>
+        Feito com ♡ por gsgaldino
+      </Typography>
+
+      <a
+        target="_blank"
+        href="https://github.com/gsgaldino/event-manager-frontend"
+        rel="noreferrer"
+      >
+        <IconButton variant="ghost">
+          <GithubIcon />
+        </IconButton>
+      </a>
+    </S.Footer>
+  </Provider>
 );
 
 export default Footer;
